@@ -7,37 +7,40 @@ import org.junit.Test;
 import java.util.List;
 
 public class FelineTests {
+
+    private final int DEFAULT_AMOUNT_OF_KITTENS =1;
+    private final int NOT_DEFAULT_AMOUNT_OF_KITTENS =2;
     @Test
-    public void FelineTest(){
+    public void felineTest1(){
         Feline feline = new Feline();
-        Assert.assertEquals(1, feline.getKittens());
+        Assert.assertEquals(DEFAULT_AMOUNT_OF_KITTENS, feline.getKittens());
     }
 
     @Test
-    public void FelineTest2(){
+    public void felineTest2(){
         Feline feline = new Feline();
-        Assert.assertEquals(2, feline.getKittens(2));
+        Assert.assertEquals(NOT_DEFAULT_AMOUNT_OF_KITTENS, feline.getKittens(NOT_DEFAULT_AMOUNT_OF_KITTENS));
     }
 
     @Test
-    public void FelineTest3(){
+    public void felineTest3(){
         Feline feline = new Feline();
         Assert.assertEquals("Кошачьи", feline.getFamily());
     }
     @Test
-    public void FelineTest4() throws Exception {
+    public void felineTest4() throws Exception {
         Feline feline = new Feline();
         Assert.assertEquals(List.of("Животные", "Птицы", "Рыба"), feline.eatMeat());
     }
 
     @Test
-    public void FelineTest5() throws Exception {
+    public void felineTest5() throws Exception {
         Feline feline = new Feline();
         Assert.assertEquals(List.of("Трава", "Различные растения"), feline.getFood("Травоядное"));
     }
 
     @Test(expected = Exception.class)
-    public void FelineTest6() throws Exception {
+    public void felineTest6() throws Exception {
         Feline feline = new Feline();
         feline.getFood("123");
     }

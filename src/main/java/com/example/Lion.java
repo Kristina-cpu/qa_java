@@ -5,6 +5,7 @@ import java.util.List;
 public class Lion {
 
     boolean hasMane;
+    private Feline feline;
 
     public Lion(String sex, Feline feline) throws Exception {
         this.feline = feline;
@@ -17,7 +18,7 @@ public class Lion {
         }
     }
 
-    private Feline feline;
+
 
     public int getKittens() {
         return feline.getKittens();
